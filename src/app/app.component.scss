@@ -1,0 +1,26 @@
+.table-body{
+  width: 98%;
+  margin: 0px 20px 0px 16px;
+}
+
+.header-app{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-button{
+  border: 1px solid #0000003d;
+  border-radius: 8%;
+  height: 30px;
+  padding: 0 15px;
+  background-color: #fff;
+}
+
+tr{
+border: 1px solid rgb(0 0 0 / 14%)  !important;
+}
+
+tr:nth-child(even) {
+  background: #f8f9fa;
+}

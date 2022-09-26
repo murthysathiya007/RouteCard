@@ -1,16 +1,55 @@
-<p-table [columns]="cols" [value]="products">
-  <ng-template pTemplate="header" let-columns>
-      <tr>
+
+<!-- <thead>
+  <th *ngFor="let col of cols">{{col.header}}</th>
+</thead>
+
+<tbody>
+  <tr *ngFor="let routeData of routecards;let i = index;">
+    <td >{{routeData.name}}</td>
+    <td >{{routeData.process}}</td>
+    <td >
+      <input type="checkbox" name="outbom" [value]="routeData.outbom" (change)="bomChange('outbom',$event,i)" />
+    </td>
+    <td >
+      <input type="checkbox" name="inbom" [value]="routeData.inbom" (change)="bomChange('inbom',$event,i)" />
+    </td>
+    <td >{{routeData.type}}</td>
+    <td >{{routeData.start_date}}</td>
+    <td >{{routeData.end_date}}</td>
+    <td >{{routeData.assignee}}</td>
+    <td >{{routeData.process}}</td>
+</tr>
+</tbody> -->
+
+<div class="table-body">
+  <div class="header-app">
+    <h4>Route Card</h4>
+    <div>
+        <button class="header-button"><i class="pi pi-ellipsis-v" style="font-size: 11px; margin-right: 4px;"></i>Action</button>
+        <button class="header-button" style="margin-left: 10px;">Submit</button>
+    </div>
+  </div>
+    <p-table [columns]="cols" [value]="routecards">
+      <ng-template pTemplate="header" let-columns>
+        <tr>
           <th *ngFor="let col of columns">
-              {{col.header}}
+            {{ col.header }}
           </th>
-      </tr>
-  </ng-template>
-  <ng-template pTemplate="body" let-rowData let-columns="columns">
-      <tr>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr>
           <td *ngFor="let col of columns">
-              {{rowData[col.field]}}
+            {{ rowData[col.field] }}
           </td>
-      </tr>
-  </ng-template>
-</p-table>
+        </tr>
+      </ng-template>
+    </p-table>
+</div>
+
+
+
+
+
+
+<button (click)="submit()" >Submit</button>

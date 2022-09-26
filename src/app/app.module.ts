@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TableModule} from 'primeng/table';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CheckboxModule } from 'primeng/checkbox';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     TableModule,
+    CheckboxModule,
     HttpClientModule,
     FormsModule,
     AppRoutingModule
