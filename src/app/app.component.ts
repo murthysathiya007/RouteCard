@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { MessageService, PrimeNGConfig } from 'primeng/api';
+import { from, range } from 'rxjs';
 import { IRouteCard } from './route-cards';
+
 
 import { RoutecardService } from './routecardservice';
 
@@ -14,6 +17,8 @@ export class AppComponent {
   routecards: IRouteCard[] = [];
   cols: any[] = [];
 
+  rowCount: FormControl = new FormControl();
+
   constructor(
     private routecardService: RoutecardService,
     private messageService: MessageService,
@@ -22,9 +27,9 @@ export class AppComponent {
 
   ngOnInit() {
     this.primengConfig.ripple = true;
-    this.routecardService
-      .getRouteCards()
-      .then((data) => (this.routecards = data));
+    // this.routecardService
+    //   .getRouteCards()
+    //   .then((data) => (this.routecards = data));
     this.cols = [
       { field: 'sno', header: 'SNO' },
       { field: 'process', header: 'PROCESS' },
@@ -115,5 +120,13 @@ export class AppComponent {
     } else {
       this.showToast('error', 'Error', 'Inbom Outbom Count is Not Equal!');
     }
+  }
+
+  makeTableData(): any{
+    const count: number = this.rowCount.value;
+
+    const [...array] = Array(count).keys();
+
+    this.routecards= this.routecardService.makeRowData(array);
   }
 }

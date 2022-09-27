@@ -1,4 +1,23 @@
 <p-toast></p-toast>
+
+
+<div style=" margin-top: 50px">
+  <span class="p-float-label">
+      <input id="float-input" type="number" [formControl]="rowCount" name="rowCount" pInputText >
+      <label for="float-input">Enter Row Count</label>
+      <button
+      type="button"
+      pButton
+      pRipple
+      label="Submit"
+      class="p-button-sm p-button-success"
+      style="margin-left:30px;height:30px;"
+      (click)="makeTableData()"
+    ></button>
+  </span>
+
+</div>
+
 <div class="table-body">
   <div class="header-app">
     <h4>Route Card</h4>
@@ -63,5 +82,16 @@
         <td>{{ rowData.status }}</td>
       </tr>
     </ng-template>
+
+    <ng-template pTemplate="footer" let-columns>
+      <ng-container *ngIf="routecards && routecards.length === 0">
+      <tr>
+        <td [attr.colspan]="columns.length">
+          No records found
+        </td>
+      </tr>
+      </ng-container>
+    </ng-template>
+
   </p-table>
 </div>

@@ -5,8 +5,8 @@ export interface IRouteCard {
   outbom?:boolean;
   inbom?:boolean;
   type?:string;
-  start_date?:string;
-  end_date?:string;
+  start_date?:string | Date;
+  end_date?:string | Date;
   assignee?:string;
   status?:string;
 }
