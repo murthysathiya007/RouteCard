@@ -1,11 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
-.p-checkbox .p-checkbox-box.p-highlight {
-  border-color: #005001 !important;
+.p-checkbox-box .pi-check {
   background: #005001 !important;
+  border: 1px solid #005001 !important;
+  padding: 3px 2px !important;
+  border-radius: 6px !important;
+  width: 18px;
+  height: 18px;
 }
 
-.p-highlight,.p-focus{
-  background-color: red !important;
-  border-color: red !important;
+.p-checkbox-box .pi-times{
+  background: red;
+  border: 1px solid red !important;
+  padding: 3px 2.5px !important;
+  border-radius: 6px !important;
+  width: 18px;
+  height: 18px;
 }
 
+.p-checkbox .p-checkbox-box {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.p-checkbox .p-checkbox-box.p-highlight {
+  border: none !important;
+}
+
+.p-focus{
+  box-shadow: none !important;
+}
+
+.p-checkbox-icon {
+  font-size: 11px !important;
+}
