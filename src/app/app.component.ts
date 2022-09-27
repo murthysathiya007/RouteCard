@@ -51,12 +51,6 @@ export class AppComponent {
     });
   }
 
-  bomChange(type: 'inbom' | 'outbom', event: any, index: number): void {
-    type === 'outbom'
-      ? (this.routecards[index].outbom = !this.routecards[index].outbom)
-      : (this.routecards[index].inbom = !this.routecards[index].inbom);
-  }
-
   submit(): void {
     let outbomCount = 0;
     let inbomCount = 0;

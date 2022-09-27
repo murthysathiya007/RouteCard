@@ -60,20 +60,23 @@
         </td>
         <td>{{ rowData.process }}</td>
         <td>
-          <input
+          <p-triStateCheckbox [(ngModel)]="rowData.outbom" [ngClass]="rowData.outbom == true ? 'checkbox-checked':''"></p-triStateCheckbox>
+          <!-- <input
             type="checkbox"
             name="outbom"
             [value]="rowData.outbom"
-            (change)="bomChange('outbom', $event, rowIndex)"
-          />
+            (ngModelChange)="bomChange('outbom', $event, rowIndex)"
+          /> -->
         </td>
         <td>
-          <input
+          <p-triStateCheckbox [(ngModel)]="rowData.inbom" ></p-triStateCheckbox>
+
+          <!-- <input
             type="checkbox"
             name="inbom"
             [value]="rowData.inbom"
             (change)="bomChange('inbom', $event, rowIndex)"
-          />
+          /> -->
         </td>
         <td>{{ rowData.type }}</td>
         <td>{{ rowData.start_date }}</td>

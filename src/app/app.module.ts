@@ -10,6 +10,7 @@ import {ButtonModule} from 'primeng/button';
 import {ToastModule} from 'primeng/toast';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InputTextModule } from 'primeng/inputtext';
+import { TriStateCheckboxModule } from 'primeng/tristatecheckbox';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { InputTextModule } from 'primeng/inputtext';
     FormsModule,
     ToastModule,
     ButtonModule,
+    TriStateCheckboxModule,
     AppRoutingModule
   ],
   providers: [],
